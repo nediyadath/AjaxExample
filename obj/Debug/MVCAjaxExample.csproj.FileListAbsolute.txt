@@ -106,3 +106,7 @@ C:\Users\OHMLAP-0143\source\repos\MVCExample\MVCAjaxExample\obj\Debug\MVCAjaxExa
 C:\Users\OHMLAP-0143\source\repos\MVCExample\MVCAjaxExample\obj\Debug\MVCAjaxExample.csproj.CopyComplete
 C:\Users\OHMLAP-0143\source\repos\MVCExample\MVCAjaxExample\obj\Debug\MVCAjaxExample.dll
 C:\Users\OHMLAP-0143\source\repos\MVCExample\MVCAjaxExample\obj\Debug\MVCAjaxExample.pdb
+C:\Users\OHMLAP-0143\source\repos\MVCExample\MVCAjaxExample\obj\Debug\MVCAjaxExample.Migrations.InitialCreate.resources
+C:\Users\OHMLAP-0143\source\repos\MVCExample\MVCAjaxExample\obj\Debug\MVCAjaxExample.csproj.GenerateResource.cache
+C:\Users\OHMLAP-0143\source\repos\MVCExample\MVCAjaxExample\obj\Debug\MVCAjaxExample.Migrations.first.resources
+C:\Users\OHMLAP-0143\source\repos\MVCExample\MVCAjaxExample\obj\Debug\MVCAjaxExample.Migrations.second.resources

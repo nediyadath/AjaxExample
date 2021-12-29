@@ -9,12 +9,21 @@
 <script>
     $(document).ready(function () {
         var url = '@Url.Action("GetPrice")';
+        var url1 = '@Url.Action("UpdateQty")';
+        var id = 0;
         $("#prodID").change(function () {
-            var id = $(this).val();
+            id = $(this).val();
             alert(id);
             $.getJSON(url, { prodID:id }, function (response) {
                 alert(response);
                 $("#price").val(response);
+            })
+        })
+        $("#qty").mouseout(function () {
+            var q = $(this).val();
+            $.getJSON(url1, { quantity: q, prodID: id }, function (response) {
+                alert(q);
+                alert(response);
             })
         })
     })
@@ -48,7 +57,7 @@
         <div class="form-group">
             @Html.LabelFor(model => model.qty, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.qty, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.EditorFor(model => model.qty, new { htmlAttributes = new { @class = "form-control", @id="qty" } })
                 @Html.ValidationMessageFor(model => model.qty, "", new { @class = "text-danger" })
             </div>
         </div>

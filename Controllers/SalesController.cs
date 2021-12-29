@@ -43,6 +43,25 @@ namespace MVCAjaxExample.Controllers
             return View();
         }
 
+        public JsonResult UpdateQty(int prodID, float quantity)
+        {
+            string msg = "Success";
+            Inventory p = db.inv.Single(x => x.prodID == prodID);
+            float q = p.qty-quantity;
+            p.qty = q;
+            try
+            {
+                db.Entry(p).State = EntityState.Modified;
+                db.SaveChanges();
+            }
+            catch
+            {
+                msg = "Something went wrong please try again";
+            }
+            return Json(msg, JsonRequestBehavior.AllowGet);
+
+        }
+
         public JsonResult GetPrice(int prodID)
         {
             float price= db.product.Single(x => x.id == prodID).price;

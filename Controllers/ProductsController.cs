@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Data;
 using System.Data.Entity;
+using System.IO;
 using System.Linq;
 using System.Net;
 using System.Web;
@@ -46,10 +47,14 @@ namespace MVCAjaxExample.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "id,name,desc,price")] Product product)
+        public ActionResult Create([Bind(Include = "id,name,desc,price")] Product product, HttpPostedFileBase photo)
         {
+           
             if (ModelState.IsValid)
             {
+                string path = Path.Combine(Server.MapPath("~/Images"), Path.GetFileName(photo.FileName));
+                photo.SaveAs(path);
+                product.photo = "~/Images/"+photo.FileName;
                 db.product.Add(product);
                 db.SaveChanges();
                 return RedirectToAction("Index");
